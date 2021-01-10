@@ -53,39 +53,64 @@ namespace desafio1
             double divide(double divisor, double dividendo)
             { return divisor + dividendo; }
 
-            double valor1 = 40;
-            double valor2 = 2;
-            double resultado = 0;
-            double i = 0;
-            //double j = 0;
-            // double t = 0;
-            double d = 0;                             
+            double valor1 = 17; double valor2 = 5; double resultado = 0;
+            double t = 0.0; double i = 0; double j = 0; double d = 0;                                                
                  
-                resultado = valor2;                              
-
+                if(valor1 == 0 || valor2 == 0){ System.Console.WriteLine("Erro: 0 não é um número divisível!"); Console.ReadLine(); }
+                
+                resultado = valor2;
                 while (resultado <= valor1)
                 {
                     i++;
                     resultado = divide(resultado, valor2);
-                }
-
+                }               
                 
-
-                // t = 1;
-                // j = valor1 + valor1 + valor1;
-                // double resultado2 = t;
-
+                //calculo abaixo funciona em partes, se o valor da variavel T = 0.0valor2, porém não consigo concatenar os 2 valores
+                // j = valor1 % valor2;
+                // double resultado2 = t;                
                 // while(resultado2 <= j)
                 // {
                 //     d++;
                 //     resultado2 = divide(resultado2, t);
                 // }
 
-                System.Console.WriteLine("{0} dividido por {1} = {2}.{3}", valor1, valor2, i, d);     
+                // for(t=0; t <= 10; t++)
+                // {
+                //     resultado = valor2;
+                //     while(resultado < valor1)
+                //     {
+                //         resultado = resultado + valor2;
+                //         d++;
+                //     }
+                // }
 
-                double a = 40; double b = 2; double c;
-                c = a / b;
-                System.Console.WriteLine(c);       
+                resultado = valor2;
+                while(resultado < valor1)
+                {
+                    resultado = divide(resultado, valor2);
+                    d++;
+                }
+
+                // double resultado2 = valor2;
+                // if(j != 0 )
+                // {
+                //     if(j==1){ j = 10; } if(j==2){ j = 20; } if(j==3){ j = 30; }
+                // }
+                // while(resultado2 <= j)
+                // {
+                //     d++;
+                //     resultado2 = divide(resultado2, valor2);
+                // }
+                
+                System.Console.WriteLine(t);               
+                // System.Console.WriteLine(resultado2);        
+                
+                System.Console.WriteLine("{0} dividido por {1} = {2}.{3}", valor1, valor2, i, d);   
+
+                //Calculo para fins de comparacao!
+                 double c;
+                c = valor1 / valor2;
+                System.Console.WriteLine("Para comparacao: {0}", c);       
 
         }
 
