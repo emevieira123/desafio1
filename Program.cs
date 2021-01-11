@@ -11,8 +11,8 @@ namespace desafio1
             double divide(double divisor, double dividendo)
             { return divisor + dividendo; }
 
-            double valor1 = 40; double valor2 = 3; double resultado = 0;
-            double i = 0; double d = 0; //double t = 0.0; double m = 0;
+            double valor1 = 10; double valor2 = 3; double resultado = 0;
+            double i = 0; double d = 0; double t = 0.0; double m = 0;
 
             if (valor1 == 0 || valor2 == 0) { System.Console.WriteLine("Erro: 0 não é um número divisível!"); Console.ReadLine(); }
             
@@ -24,21 +24,34 @@ namespace desafio1
             }
 
             double resultado2 = valor2;
-            while (resultado2 <= valor1)
+            // while (resultado2 <= valor1)
+            // {
+            //     resultado2 = divide(resultado2, valor2);
+            //     d++;
+            // }
+            
+            for(t=0; t <= valor2; t++)
             {
-                resultado2 = divide(resultado2, valor2);
-                d++;
+                resultado = valor2;
+                while(resultado <= valor1)
+                {
+                    resultado = resultado + valor1;
+                    d++;
+                }
             }
 
             // for(t=0; t<valor2; t++)
             // {
             //     resultado2 = divide(resultado2, valor1);
+                
             //     for(m=0; m<valor2; m++)
             //     {
             //         resultado2 = divide(resultado2, valor1);
+            //         d++;
             //     }
             // }
 
+            /*O calculo abaixo está com o operador % */
             // j = valor1 % valor2;
             // double resultado2 = valor2;
             // if(j != 0 )
@@ -50,28 +63,15 @@ namespace desafio1
             // {
             //     d++;
             //     resultado2 = divide(resultado2, valor2);
-            // }                
+            // }            
 
-            /*calculo abaixo funciona em partes com o %, se o valor da variavel T = 0.0valor2, porém não consigo concatenar os 2 valores */
-
+            /*O calculo abaixo está com o operador %, se o valor da variavel T = 0.0valor2, porém não consigo concatenar os 2 valores */
             // double resultado2 = t;                
             // while(resultado2 <= j)
             // {
             //     d++;
             //     resultado2 = divide(resultado2, t);
-            // }
-
-            // for(t=0; t <= valor1; t++)
-            // {
-            //     resultado = valor2;
-            //     while(resultado < valor1)
-            //     {
-            //         resultado = resultado + valor2;
-            //         d++;
-            //     }
-            // }                              
-
-            
+            // }          
             System.Console.WriteLine(resultado);
             System.Console.WriteLine(resultado2);
             System.Console.WriteLine("{0} dividido por {1} = {2}.{3}", valor1, valor2, i, d);
