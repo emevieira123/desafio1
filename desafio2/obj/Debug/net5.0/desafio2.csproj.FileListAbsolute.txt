@@ -1,0 +1,15 @@
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/bin/Debug/net5.0/desafio2.deps.json
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/bin/Debug/net5.0/desafio2.runtimeconfig.json
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/bin/Debug/net5.0/desafio2.runtimeconfig.dev.json
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/bin/Debug/net5.0/desafio2.dll
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/bin/Debug/net5.0/ref/desafio2.dll
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/bin/Debug/net5.0/desafio2.pdb
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/desafio2.csprojAssemblyReference.cache
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/desafio2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/desafio2.AssemblyInfoInputs.cache
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/desafio2.AssemblyInfo.cs
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/desafio2.csproj.CoreCompileInputs.cache
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/desafio2.dll
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/ref/desafio2.dll
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/desafio2.pdb
+/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio2/obj/Debug/net5.0/desafio2.genruntimeconfig.cache
