@@ -11,8 +11,8 @@ namespace desafio1
             decimal divide(decimal divisor, decimal dividendo)
             { return divisor + dividendo; }
 
-            decimal valor1 = 10; decimal valor2 = 3; decimal resultado = 0;
-            decimal i = 0; decimal d = 0; decimal t = 0; decimal m = 0;
+            decimal valor1 = 17.0m; decimal valor2 = 5.0m; decimal resultado = 0.0m;
+            decimal i = 0.0m; decimal d = 0; decimal t = 0; //decimal m = 0;
 
             if (valor1 == 0 || valor2 == 0) { System.Console.WriteLine("Erro: 0 não é um número divisível!"); Console.ReadLine(); }
             
@@ -51,30 +51,9 @@ namespace desafio1
             //     }
             // }
 
-            /*O calculo abaixo está com o operador % */
-            // j = valor1 % valor2;
-            // double resultado2 = valor2;
-            // if(j != 0 )
-            // {
-            //     if(j==1){ j = 100; } if(j==2){ j = 200; } if(j==3){ j = 300; } if(j==4){ j = 400; } if(j==5){ j = 500; }
-            //     if(j==6){ j = 600; } if(j==7){ j = 700; } if(j==8){ j = 800; } if(j==9){ j = 900; } 
-            // }
-            // while(resultado2 <= j)
-            // {
-            //     d++;
-            //     resultado2 = divide(resultado2, valor2);
-            // }            
-
-            /*O calculo abaixo está com o operador %, se o valor da variavel T = 0.0valor2, porém não consigo concatenar os 2 valores */
-            // double resultado2 = t;                
-            // while(resultado2 <= j)
-            // {
-            //     d++;
-            //     resultado2 = divide(resultado2, t);
-            // }          
             System.Console.WriteLine(resultado);
             System.Console.WriteLine(resultado2);
-            System.Console.WriteLine("{0} dividido por {1} = {2}.{3}", valor1, valor2, i, d);
+            System.Console.WriteLine("{0} dividido por {1} = {2}", valor1, valor2, i);
 
             //Calculo para fins de comparacao!
             decimal c;
