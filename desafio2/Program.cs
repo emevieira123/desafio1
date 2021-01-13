@@ -10,13 +10,15 @@ namespace desafio2
 
             matematica.Soma(10, 5);
             matematica.Subtrai(40, 7);
-            matematica.Mutiplica(9, 9);
-            matematica.Exponencia(9, 2);
+            // matematica.Mutiplica(9, 9);
+            matematica.Exponencia(9, 3);
 
             System.Console.WriteLine(matematica.Somar);
             System.Console.WriteLine(matematica.Subtrair);
-            System.Console.WriteLine(matematica.Multiplicar);
-            System.Console.WriteLine(matematica.Exponenciar);
+            // System.Console.WriteLine(matematica.Multiplicar);
+            int multiplicacao = matematica.Mutiplica(9,9);
+            System.Console.WriteLine(multiplicacao); 
+            System.Console.WriteLine(matematica.Exponenciar);         
 
         }
     }
@@ -61,30 +63,25 @@ namespace desafio2
 
         public int Mutiplica(int multiplicando, int multiplicador)
         {
-            int resultado = 0;
+            int multiplicacao = 0;
             for (int i = 0; i < multiplicando; i++)
             {
-                resultado = resultado + multiplicador;
+                multiplicacao = multiplicacao + multiplicador;
             }
-            return this.Multiplicar = resultado;
+            return multiplicacao;
         }
 
         public int Exponencia(int numeroBase, int expoente)
         {
-            int resultado1 = 0;
-            int result = 0;
-            //int armazenaValor = numeroBase;
-
-            for (int count1 = 0; count1 < numeroBase; count1++)
+            int result = numeroBase;
+            for (int count1 = 0; count1 < expoente - 1; count1++)
             {
-                resultado1 = resultado1 + expoente;
-                
+                result = Mutiplica(result, numeroBase); 
+                // for (int i = 0; i < numeroBase; i++)
+                // {
+                //     result = result + expoente;
+                // }
             }
-            for (int count2 = 0; count2 < numeroBase; count2++)
-                {
-                    result = result + resultado1;
-                }
-
             return this.Exponenciar = result;
         }
     }
