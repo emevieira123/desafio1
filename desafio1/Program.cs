@@ -8,11 +8,11 @@ namespace desafio1
 
         static void Main(string[] args)
         {
-            double divide(double divisor, double dividendo)
+            decimal divide(decimal divisor, decimal dividendo)
             { return divisor + dividendo; }
 
-            double valor1 = 10; double valor2 = 3; double resultado = 0;
-            double i = 0; double d = 0; double t = 0.0; double m = 0;
+            decimal valor1 = 10; decimal valor2 = 3; decimal resultado = 0;
+            decimal i = 0; decimal d = 0; decimal t = 0; decimal m = 0;
 
             if (valor1 == 0 || valor2 == 0) { System.Console.WriteLine("Erro: 0 não é um número divisível!"); Console.ReadLine(); }
             
@@ -23,7 +23,7 @@ namespace desafio1
                 resultado = divide(resultado, valor2);
             }
 
-            double resultado2 = valor2;
+            decimal resultado2 = valor2;
             // while (resultado2 <= valor1)
             // {
             //     resultado2 = divide(resultado2, valor2);
@@ -77,7 +77,7 @@ namespace desafio1
             System.Console.WriteLine("{0} dividido por {1} = {2}.{3}", valor1, valor2, i, d);
 
             //Calculo para fins de comparacao!
-            double c;
+            decimal c;
             c = valor1 / valor2;
             System.Console.WriteLine("Para comparacao: {0}", c);
 

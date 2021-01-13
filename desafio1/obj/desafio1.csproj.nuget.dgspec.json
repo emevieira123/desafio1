@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1.csproj": {}
+    "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1/desafio1.csproj": {}
   },
   "projects": {
-    "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1.csproj": {
+    "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1/desafio1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1.csproj",
+        "projectUniqueName": "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1/desafio1.csproj",
         "projectName": "desafio1",
-        "projectPath": "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1.csproj",
+        "projectPath": "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1/desafio1.csproj",
         "packagesPath": "/Users/emevieira/.nuget/packages/",
-        "outputPath": "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/obj/",
+        "outputPath": "/Users/emevieira/Documents/projetos-csharp/desafio1/desafio1/desafio1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/emevieira/.nuget/NuGet/NuGet.Config"
