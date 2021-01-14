@@ -9,30 +9,22 @@ namespace desafio2
             Matematica matematica = new Matematica();
 
             matematica.Soma(10, 5);
-            System.Console.WriteLine(matematica.Somar);
+            System.Console.WriteLine("Soma = {0}", matematica.Somar); //Resultado do calculo de soma
 
             matematica.Subtrai(40, 7);
-            System.Console.WriteLine(matematica.Subtrair);
+            System.Console.WriteLine("Subtração = {0}", matematica.Subtrair); //Resultado do calculo de subtração
 
-            int multiplicacao = matematica.Mutiplica(-9, 9);
-            System.Console.WriteLine(multiplicacao);
+            int multiplicacao = matematica.Multiplica(-9, -2); //Resultado do calculo de multiplicação
+            System.Console.WriteLine("Multiplicação = {0}", multiplicacao);
 
-            matematica.Exponencia(9, 2);
-            System.Console.WriteLine(matematica.Exponenciar);
+            matematica.Exponencia(-9, 2);
+            System.Console.WriteLine("Exponenciação = {0}", matematica.Exponenciar); //Resultado do calculo de exponenciação
 
-            // matematica.Mutiplica(9, 9);
-            // System.Console.WriteLine(matematica.Multiplicar);
-
-            // int result = matematica.Exponencia(9, 3);
-            // System.Console.WriteLine(result);
-
-
-            int teste = -9 * (-9);
-            System.Console.WriteLine("Comparacao * = {0}", teste);
-
+            //Essa formula é somente para comparação, para ver se os valores estão batendo
+            // int teste = -9 * (-9);
+            // System.Console.WriteLine("Comparacao * = {0}", teste);
         }
     }
-
     public class Matematica
     {
         public int Somar;
@@ -42,10 +34,9 @@ namespace desafio2
 
         public int Soma(int primeiroValor, int segundoValor)
         {
-            return this.Somar = primeiroValor + segundoValor;
+            return this.Somar = primeiroValor + segundoValor; //Formula que realiza a soma de dois valores
         }
-
-        public int Subtrai(int primeiroValor, int segundoValor)
+        public int Subtrai(int primeiroValor, int segundoValor) //Formula que realiza a subtração de dois valores
         {
             int count = 0;
             int valor = segundoValor;
@@ -65,51 +56,52 @@ namespace desafio2
             }
             return this.Subtrair = count;
         }
-
-        public int Mutiplica(int multiplicando, int multiplicador)
-        {
-            int multiplicacao = 0;
-            if (multiplicando < multiplicacao || multiplicador < multiplicacao)
+        public int Multiplica(int multiplicando, int multiplicador) //Formula que realiza a multiplicação de dois valores
+        {            
+            int result = 0; int resultado = 0; //Variaveis que recebe o resulta de um calculo
+            int i = 0; int d = 0; int count = 0; //Variaveis utilizadas como contador
+            if (multiplicando < result || multiplicador < result)
             {
-                for (int i = 0; i < multiplicando; i++)
+                for (i = 0; i < multiplicando; i++)
                 {
-                    multiplicacao = multiplicacao + multiplicador;
+                    result = result + multiplicador;
                 }
-            }
-            // if(multiplicando < 0 && multiplicador < 0)
-            // {
-            //     for (int i = 0; i > multiplicando; i--)
-            //     {
-            //         multiplicacao = multiplicacao + multiplicador;
-            //     }
-            // }
+            }            
 
-            for (int i = 0; i < multiplicador; i++)
+            if (multiplicando < 0 && multiplicador < 0)
+                {                    
+                    for (i = 0; i > multiplicador; i--) {
+                        resultado = resultado + multiplicando; 
+                    }
+                    for (d = 0; d > resultado; d--) 
+                    {
+                        count++;
+                    }
+                    result = count;
+                }
+
+            for (i = 0; i < multiplicador; i++)
             {
-                multiplicacao = multiplicacao + multiplicando;
+                result = result + multiplicando;
             }
-            return this.Multiplicar = multiplicacao;
+            return this.Multiplicar = result;
         }
+        public int Exponencia(int numeroBase, int expoente) //Formula que realiza a exponenciação de dois valores
+        {            
+            int resultado = numeroBase; //Essa variavel recebe o valor do numeroBase
+            int i = 0; //Variavel utilizadal como contador             
+            int sub = 0;
+                
+                for (i = 0; i < expoente -1; i++)
+                { resultado = Multiplica(resultado, numeroBase); }
 
-        public int Exponencia(int numeroBase, int expoente)
-        {
-            int result = numeroBase;
-            if (numeroBase < 0)
-            {
-                for (int count1 = 0; count1 < expoente - 1; count1++)
+                if (numeroBase < 0)
                 {
-                    result = Mutiplica(result, numeroBase);                    
+                    sub = Subtrai(resultado, resultado);
+                    return this.Exponenciar = Subtrai(sub, resultado);                    
                 }
-            }
-            for (int count1 = 0; count1 < expoente - 1; count1++)
-            {
-                result = Mutiplica(result, numeroBase);
-                // for (int i = 0; i < numeroBase; i++)
-                // {
-                //     result = result + expoente;
-                // }
-            }
-            return this.Exponenciar = result;
+                else
+                { return this.Exponenciar = resultado; }
         }
     }
 }
