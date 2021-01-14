@@ -6,15 +6,15 @@ namespace desafio3
     {
         static void Main(string[] args)
         {            
-        int b1 = 1; int b2 = 2; int b3 = 3; int b4 = 4; //Variaveis de cada bismestre com seus respectivos valores
+        double b1 = 1; double b2 = 2; double b3 = 3; double b4 = 4; //Variaveis de cada bismestre com seus respectivos valores
 
         //Variaveis que recebe o valor da nota de cada bismestre
         double nota1 = 8; 
         double nota2 = 8; 
         double nota3 = 8; 
-        double nota4 = 10;        
+        double nota4 = 7;        
 
-        int anoLetivo = b1 +b2 + b3 + b4; //calculo dos valores das variaveis de cada bimestre
+        double anoLetivo = b1 +b2 + b3 + b4; //calculo dos valores das variaveis de cada bimestre
 
         //Calculos dos valores das notas de cada bimestre vezes (*) os valores das variaveis de cada bimestre
         double resultado1 = nota1 * b1;
@@ -28,9 +28,10 @@ namespace desafio3
 
         if(media < 7.5)
         { System.Console.WriteLine("A média {0}, esta baixa", media); Console.ReadLine(); }
-        if(media >= 7.5 || media <= 8.5)
-        { System.Console.WriteLine("A média {0}, esta ideal", media); Console.ReadLine(); }
-        else{ System.Console.WriteLine("A média {0}, esta alta", media); Console.ReadLine(); }       
+        else if(media <= 8.5)
+        { System.Console.WriteLine("A média {0}, esta ideal", media); Console.ReadLine(); }        
+        else
+        { System.Console.WriteLine("A média {0}, esta alta", media); Console.ReadLine(); }       
             
         }
     }
