@@ -11,11 +11,11 @@ namespace desafio1
             Decimal divide(Decimal divisor, Decimal dividendo)
             { return divisor + dividendo; }
 
-            Decimal valor1 = 17; Decimal valor2 = 5; Decimal resultado = 0;
-            Decimal i = 0; Decimal d = 0; Decimal t = 0; Decimal resultadoDecimal = 0;  
+            Decimal valor1 = 17; Decimal valor2 = 5;
+            Decimal i = 0; Decimal d = 0; Decimal count = 0; 
             Decimal recebeDecimal = 0.1m;          
 
-            resultado = valor2;
+            Decimal resultado = valor2;
             while (resultado <= valor1)
             {
                 i++;
@@ -25,9 +25,10 @@ namespace desafio1
             //Decimal resultado2 = valor2;
             //Decimal resultado2 = valor2 + i;
             Decimal resultado2 = resultado + resultado;
-            resultadoDecimal = recebeDecimal;
+            Decimal teste = valor2;
+            Decimal resultadoDecimal = recebeDecimal;
 
-            // for(d = 0; d < 40; d++)
+            // for(d = 0; d < resultado2; d++)
             // {
             //     t++;
             //     resultado2 = resultadoDecimal + resultadoDecimal;
@@ -36,14 +37,13 @@ namespace desafio1
             while(valor2 <= resultado2)
             {
                 d++;
-                resultado2 = divide(recebeDecimal, recebeDecimal);
-                //d++;
+                resultado2 = divide(teste, teste);                
             }
 
             i = i + recebeDecimal;
 
-            System.Console.WriteLine(resultado);
-            System.Console.WriteLine(t);
+            System.Console.WriteLine(resultado2);
+            System.Console.WriteLine(count);
             System.Console.WriteLine(d);
             System.Console.WriteLine("{0} dividido por {1} = {2:N2}", valor1, valor2, i);
 
