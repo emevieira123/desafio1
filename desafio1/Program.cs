@@ -8,14 +8,13 @@ namespace desafio1
 
         static void Main(string[] args)
         {
-            decimal divide(decimal divisor, decimal dividendo)
+            Decimal divide(Decimal divisor, Decimal dividendo)
             { return divisor + dividendo; }
 
-            decimal valor1 = 17.0m; decimal valor2 = 5.0m; decimal resultado = 0.0m;
-            decimal i = 0.0m; decimal d = 0; decimal t = 0; //decimal m = 0;
+            Decimal valor1 = 17; Decimal valor2 = 5; Decimal resultado = 0;
+            Decimal i = 0; Decimal d = 0; Decimal t = 0; Decimal resultadoDecimal = 0;  
+            Decimal recebeDecimal = 0.1m;          
 
-            if (valor1 == 0 || valor2 == 0) { System.Console.WriteLine("Erro: 0 não é um número divisível!"); Console.ReadLine(); }
-            
             resultado = valor2;
             while (resultado <= valor1)
             {
@@ -23,42 +22,45 @@ namespace desafio1
                 resultado = divide(resultado, valor2);
             }
 
-            decimal resultado2 = valor2;
-            // while (resultado2 <= valor1)
+            //Decimal resultado2 = valor2;
+            //Decimal resultado2 = valor2 + i;
+            Decimal resultado2 = resultado + resultado;
+            resultadoDecimal = recebeDecimal;
+
+            // for(d = 0; d < 40; d++)
             // {
-            //     resultado2 = divide(resultado2, valor2);
-            //     d++;
+            //     t++;
+            //     resultado2 = resultadoDecimal + resultadoDecimal;
             // }
-            
-            for(t=0; t <= valor2; t++)
+
+            while(valor2 <= resultado2)
             {
-                resultado = valor2;
-                while(resultado <= valor1)
-                {
-                    resultado = resultado + valor1;
-                    d++;
-                }
+                d++;
+                resultado2 = divide(recebeDecimal, recebeDecimal);
+                //d++;
             }
 
-            // for(t=0; t<valor2; t++)
-            // {
-            //     resultado2 = divide(resultado2, valor1);
-                
-            //     for(m=0; m<valor2; m++)
-            //     {
-            //         resultado2 = divide(resultado2, valor1);
-            //         d++;
-            //     }
-            // }
+            i = i + recebeDecimal;
 
             System.Console.WriteLine(resultado);
-            System.Console.WriteLine(resultado2);
-            System.Console.WriteLine("{0} dividido por {1} = {2}", valor1, valor2, i);
+            System.Console.WriteLine(t);
+            System.Console.WriteLine(d);
+            System.Console.WriteLine("{0} dividido por {1} = {2:N2}", valor1, valor2, i);
 
-            //Calculo para fins de comparacao!
-            decimal c;
-            c = valor1 / valor2;
-            System.Console.WriteLine("Para comparacao: {0}", c);
+
+
+            
+            // Decimal dividendo = 17;
+            // Decimal divisor = 5;
+            
+            //     Console.WriteLine("{0} dividido por {1} = {2:N2}", dividendo, divisor,
+            //                       Decimal.Divide(dividendo, divisor));                
+            
+
+            // //Calculo para fins de comparacao!
+            // Decimal c;
+            // c = valor1 / valor2;
+            // System.Console.WriteLine("Para comparacao: {0}", c);
 
         }
 
