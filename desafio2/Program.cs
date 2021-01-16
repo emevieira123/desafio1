@@ -11,13 +11,13 @@ namespace desafio2
             matematica.Soma(10, 5);
             System.Console.WriteLine("Soma = {0}", matematica.Somar); //Resultado do calculo de soma
 
-            matematica.Subtrai(40, 7);
+            matematica.Subtrai(-40, -7);
             System.Console.WriteLine("Subtração = {0}", matematica.Subtrair); //Resultado do calculo de subtração
 
-            int multiplicacao = matematica.Multiplica(-9, -2); //Resultado do calculo de multiplicação
+            int multiplicacao = matematica.Multiplica(9, -2); //Resultado do calculo de multiplicação
             System.Console.WriteLine("Multiplicação = {0}", multiplicacao);
 
-            matematica.Exponencia(-9, 2);
+            matematica.Exponencia(-9, 3);
             System.Console.WriteLine("Exponenciação = {0}", matematica.Exponenciar); //Resultado do calculo de exponenciação
 
             //Essa formula é somente para comparação, para ver se os valores estão batendo
@@ -52,7 +52,7 @@ namespace desafio2
             while (resultado < segundoValor)
             {
                 resultado = resultado + 1;
-                count--;
+                count += -1;
             }
             return this.Subtrair = count;
         }
@@ -70,10 +70,10 @@ namespace desafio2
 
             if (multiplicando < 0 && multiplicador < 0)
                 {                    
-                    for (i = 0; i > multiplicador; i--) {
+                    for (i = 0; i > multiplicador; i += -1) {
                         resultado = resultado + multiplicando; 
                     }
-                    for (d = 0; d > resultado; d--) 
+                    for (d = 0; d > resultado; d += -1) 
                     {
                         count++;
                     }
@@ -90,18 +90,21 @@ namespace desafio2
         {            
             int resultado = numeroBase; //Essa variavel recebe o valor do numeroBase
             int i = 0; //Variavel utilizadal como contador             
-            int sub = 0;
-                
-                for (i = 0; i < expoente -1; i++)
+            //int sub = 0;
+                expoente += -1;
+                for (i = 0; i < expoente; i++)
                 { resultado = Multiplica(resultado, numeroBase); }
-
-                if (numeroBase < 0)
-                {
-                    sub = Subtrai(resultado, resultado);
-                    return this.Exponenciar = Subtrai(sub, resultado);                    
-                }
-                else
-                { return this.Exponenciar = resultado; }
+                
+                return this.Exponenciar = resultado;
         }
     }
 }
+
+
+                // if (numeroBase < 0)
+                // {
+                //     sub = Subtrai(resultado, resultado);
+                //     return this.Exponenciar = Subtrai(sub, resultado);                    
+                // }
+                // else
+                // { return this.Exponenciar = resultado; }
