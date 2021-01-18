@@ -6,7 +6,7 @@ namespace desafio1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Divisão = " + Program.Calculo(500m, 33m));
+            Console.WriteLine("Divisão = " + Program.Calculo(10m, 3m));
         }
         public static Decimal Calculo(Decimal dividendo, Decimal divisor)
         {
@@ -29,19 +29,21 @@ namespace desafio1
             Decimal aux = valorDivisao + obtemDecimal + obtemDecimal2;
 
             return aux;
+            //return valorSoma;
         }
 
         public static Decimal somaDivisor(Decimal dividendo, Decimal divisor)
         {
             Decimal i = 0;
             Decimal quociente = divisor;
-            if (dividendo < 0 || divisor < 0)
+            if (dividendo < divisor)
             {
                 while (quociente >= dividendo)
                 {
                     i += -1;
-                    quociente = quociente + divisor;
+                    quociente = quociente + dividendo + 5;
                 }
+                return quociente;
             }
 
             while (quociente <= dividendo)
@@ -56,31 +58,48 @@ namespace desafio1
         {
             Decimal i = 0;
             Decimal quociente = divisor;
+            Decimal aux = dividendo;
 
-            if (dividendo < 0 || divisor < 0)
+            if (divisor < 0)
+            {
+                while (quociente > -dividendo)
+                {
+                    i += -1;
+                    quociente = quociente + divisor;
+                }
+                //i += -1;
+                return i;
+            }
+            else if(dividendo < 0)
+            {
+                while (aux < divisor)
+                {
+                    i += -1;
+                    aux = aux + divisor + 1;
+                }
+                i += 1;
+                return i;
+            }
+            else if(dividendo < 0 && divisor < 0)
             {
                 while (quociente >= dividendo)
                 {
-                    i += -1;
-                    quociente += divisor;
+                    i++;
+                    quociente = quociente + divisor;
                 }
-                //return i;
-            }
-            else if(divisor < 0 && dividendo < 0)
-            {
-                while(quociente >= divisor)
-                {
-                    i += -1;
-                    quociente += dividendo;
-                }
-            }
 
+                // for (i = 0; i > dividendo; i++)
+                // {
+                //     quociente += divisor;
+                // }
+                return i;
+            }            
             while (quociente <= dividendo)
             {
                 i++;
                 quociente = quociente + divisor;
             }
-            return i;//Retorna o valor do contador
+            return i; //Retorna o valor do contador
         }
 
         public static Decimal Subtrai(Decimal primeiroValor, Decimal segundoValor) //Formula que realiza a subtração de valores
