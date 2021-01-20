@@ -6,12 +6,21 @@ namespace desafio1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Divisão = " + Program.Calculo(10m, 3m));
+            // Console.WriteLine("Divisão = " + Program.Calculo(40m, 8m));
+            // Console.WriteLine("Divisão = " + Program.Calculo(-8m, 2m));
+            // Console.WriteLine("Divisão = " + Program.Calculo(8m, -2m));
+            // Console.WriteLine("Divisão = " + Program.Calculo(-8m, -2m));
+            // Console.WriteLine("Divisão = " + Program.Calculo(7m, 3m));
+
         }
         public static Decimal Calculo(Decimal dividendo, Decimal divisor)
         {
             Decimal valorDivisao = Divide(dividendo, divisor);//Recebe o valor da divisao
             Decimal valorSoma = somaDivisor(dividendo, divisor);//retorna o Valor da soma do divisor até chegar ao valor do dividendo
+            if(valorSoma == dividendo + divisor)
+            {
+                return valorDivisao;
+            }
             Decimal valorSubtracao = Subtrai(valorSoma, divisor);//Pega o valorSoma e subtrai pelo divisor
             Decimal obtemResto = Subtrai(dividendo, valorSubtracao);//Pega o valorSubtracao e subtrai pelo dividendo e obtem o resto da divisao entre dividendo e divisor
             Decimal multResto = Multiplica(obtemResto, 10m);//Multiplica o Resto por 10
@@ -29,29 +38,77 @@ namespace desafio1
             Decimal aux = valorDivisao + obtemDecimal + obtemDecimal2;
 
             return aux;
-            //return valorSoma;
+            // return valorSoma;
         }
 
         public static Decimal somaDivisor(Decimal dividendo, Decimal divisor)
         {
             Decimal i = 0;
-            Decimal quociente = divisor;
-            if (dividendo < divisor)
+            Decimal quociente = divisor;        //Ainda realizando testes em todo o somaDivisor, os decimais negativos não
+            Decimal aux = dividendo;            //estão funcionando
+
+            if(dividendo < 0 && divisor < 0)
             {
                 while (quociente >= dividendo)
                 {
-                    i += -1;
-                    quociente = quociente + dividendo + 5;
+                    i++;
+                    quociente = quociente + divisor;
                 }
                 return quociente;
             }
-
+            else if (divisor < 0)
+            {
+                while (quociente +1 > -dividendo)
+                {
+                    i += -1;
+                    quociente = quociente + divisor;
+                }
+                //i += -1;
+                return quociente;
+            }
+            else if(dividendo < 0)
+            {
+                while (quociente > dividendo)
+                {
+                    i += -1;
+                    quociente = quociente + dividendo;
+                }
+                // while (aux < -divisor + 1)
+                // {
+                //     i += -1;
+                //     aux = aux + divisor;
+                // }
+                //i += 1;
+                return quociente;
+            }            
+            else
+            {
             while (quociente <= dividendo)
             {
                 i++;
                 quociente = quociente + divisor;
             }
-            return quociente;//Retorna a soma do valor do divisor
+            return quociente;
+            }
+
+            // Decimal i = 0;
+            // Decimal quociente = divisor;
+            // if (dividendo < divisor)
+            // {
+            //     while (quociente >= dividendo)
+            //     {
+            //         i += -1;
+            //         quociente = quociente + dividendo + 5;
+            //     }
+            //     return quociente;
+            // }
+
+            // while (quociente <= dividendo)
+            // {
+            //     i++;
+            //     quociente = quociente + divisor;
+            // }
+            // return quociente;//Retorna a soma do valor do divisor
         }
 
         public static Decimal Divide(Decimal dividendo, Decimal divisor)
@@ -60,9 +117,18 @@ namespace desafio1
             Decimal quociente = divisor;
             Decimal aux = dividendo;
 
-            if (divisor < 0)
+            if(dividendo < 0 && divisor < 0)
             {
-                while (quociente > -dividendo)
+                while (quociente >= dividendo)
+                {
+                    i++;
+                    quociente = quociente + divisor;
+                }
+                return i;
+            } 
+            else if (divisor < 0)
+            {
+                while (quociente +1 > -dividendo)
                 {
                     i += -1;
                     quociente = quociente + divisor;
@@ -70,30 +136,21 @@ namespace desafio1
                 //i += -1;
                 return i;
             }
-            else if(dividendo < 0)
+            else if(dividendo < 0)              //Esse else if ainda nao esta funcionando, resultado nao esta preciso
             {
-                while (aux < divisor)
+                // while (quociente > dividendo)
+                // {
+                //     i += -1;
+                //     quociente = quociente + dividendo;
+                // }
+                while (aux < -divisor + 1)
                 {
                     i += -1;
-                    aux = aux + divisor + 1;
+                    aux = aux + divisor;
                 }
-                i += 1;
                 return i;
             }
-            else if(dividendo < 0 && divisor < 0)
-            {
-                while (quociente >= dividendo)
-                {
-                    i++;
-                    quociente = quociente + divisor;
-                }
-
-                // for (i = 0; i > dividendo; i++)
-                // {
-                //     quociente += divisor;
-                // }
-                return i;
-            }            
+                       
             while (quociente <= dividendo)
             {
                 i++;
