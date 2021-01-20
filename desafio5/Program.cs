@@ -6,14 +6,14 @@ namespace desafio5
     {       
         static void Main(string[] args)
         {
-            int ValorEntrada = 15;
+            int ValorEntrada = 6;
             Fibonacci fibonacci = new Fibonacci();
 
-            for(int i = 0; i < ValorEntrada; i++)
-            {
+            // for(int i = 0; i < ValorEntrada; i++)
+            // {
                 //Recebe o valor da variavel (valorAnterior) e faz a contagem atraves da variavel (i) a quantidade de vezes informada na variavel (ValorEntrada).
-                System.Console.WriteLine("{0}", fibonacci.Calculo(i)); 
-            }
+                System.Console.WriteLine("{0}", fibonacci.Calculo(ValorEntrada - 1)); 
+            //}
         }
     }
 
