@@ -6,39 +6,45 @@ namespace desafio1
     {
         static void Main(string[] args)
         {
-            // Console.WriteLine("Divisão = " + Program.Calculo(40m, 8m));
-            // Console.WriteLine("Divisão = " + Program.Calculo(-8m, 2m));
-            // Console.WriteLine("Divisão = " + Program.Calculo(8m, -2m));
-            // Console.WriteLine("Divisão = " + Program.Calculo(-8m, -2m));
+            Console.WriteLine("Divisão1 = " + Program.Divide(40m, 8m));
+            Console.WriteLine("Divisão2 = " + Program.Divide(-8m, 2m));
+            Console.WriteLine("Divisão3 = " + Program.Divide(-40m, -3m));
+            Console.WriteLine("Divisão4 = " + Program.Divide(40m, 3m));
             // Console.WriteLine("Divisão = " + Program.Calculo(7m, 3m));
+            Console.WriteLine("Divisão5 = " + Program.Subtrai(-40m, -39m));
+            Console.WriteLine("Divisão6 = " + Program.Multiplica(3m, 0.1m));
+
+            Console.WriteLine("Divisão7 = " + Program.Multiplica(13m, -3m));
+            Console.WriteLine("Divisão8 = " + Program.Multiplica(-1m, 10m));
+            Console.WriteLine("Divisão9 = " + Program.Multiplica(3m, 0.1m));
+            Console.WriteLine("Divisão10 = " + Program.Multiplica(3m, -3m));
+            Console.WriteLine("Divisão11 = " + Program.Multiplica(1m, 10m));
+
+            Console.WriteLine("Divisão12 = " + Program.DivideInteiro(10m, -3m));
+
+
 
         }
-        public static Decimal Calculo(Decimal dividendo, Decimal divisor)
+        public static Decimal Divide(Decimal dividendo, Decimal divisor)
         {
-            Decimal valorDivisao = Divide(dividendo, divisor);//Recebe o valor da divisao
-            Decimal valorSoma = somaDivisor(dividendo, divisor);//retorna o Valor da soma do divisor até chegar ao valor do dividendo
-            if(valorSoma == dividendo + divisor)
+            Decimal quociente = DivideInteiro(dividendo, divisor);//Recebe o valor da divisao 
+            Decimal resto = Subtrai(dividendo, Multiplica(quociente, divisor));
+            if (resto != 0)
             {
-                return valorDivisao;
+                Decimal n = Multiplica(resto, 10m);
+                Decimal valorPrimeiroDecimal = DivideInteiro(n, divisor);
+                quociente += Multiplica(valorPrimeiroDecimal, 0.1m);
+
+                resto = Subtrai(n, Multiplica(valorPrimeiroDecimal, divisor));
+                if (resto != 0)
+                {
+                    Decimal m = Multiplica(resto, 10m);
+                    Decimal valorSegundoDecimal = DivideInteiro(m, divisor);
+                    quociente += Multiplica(valorSegundoDecimal, 0.01m);
+                }
             }
-            Decimal valorSubtracao = Subtrai(valorSoma, divisor);//Pega o valorSoma e subtrai pelo divisor
-            Decimal obtemResto = Subtrai(dividendo, valorSubtracao);//Pega o valorSubtracao e subtrai pelo dividendo e obtem o resto da divisao entre dividendo e divisor
-            Decimal multResto = Multiplica(obtemResto, 10m);//Multiplica o Resto por 10
-            Decimal divResto = Divide(multResto, divisor);//Pega o valor da multiplicacao e divide pelo divisor
-            Decimal obtemDecimal = Multiplica(divResto, 0.1m);
 
-            //Obter o segundo decimal            
-            Decimal valorSoma2 = somaDivisor(multResto, divisor);
-            Decimal valorSubtracao2 = Subtrai(valorSoma2, divisor);
-            Decimal obtemResto2 = Subtrai(multResto, valorSubtracao2);
-            Decimal multResto2 = Multiplica(obtemResto2, 10m);
-            Decimal divResto2 = Divide(multResto2, divisor);
-            Decimal obtemDecimal2 = Multiplica(divResto2, 0.01m);
-
-            Decimal aux = valorDivisao + obtemDecimal + obtemDecimal2;
-
-            return aux;
-            // return valorSoma;
+            return quociente;
         }
 
         public static Decimal somaDivisor(Decimal dividendo, Decimal divisor)
@@ -47,7 +53,7 @@ namespace desafio1
             Decimal quociente = divisor;        //Ainda realizando testes em todo o somaDivisor, os decimais negativos não
             Decimal aux = dividendo;            //estão funcionando
 
-            if(dividendo < 0 && divisor < 0)
+            if (dividendo < 0 && divisor < 0)
             {
                 while (quociente >= dividendo)
                 {
@@ -58,7 +64,7 @@ namespace desafio1
             }
             else if (divisor < 0)
             {
-                while (quociente +1 > -dividendo)
+                while (quociente + 1 > -dividendo)
                 {
                     i += -1;
                     quociente = quociente + divisor;
@@ -66,7 +72,7 @@ namespace desafio1
                 //i += -1;
                 return quociente;
             }
-            else if(dividendo < 0)
+            else if (dividendo < 0)
             {
                 while (quociente > dividendo)
                 {
@@ -80,15 +86,15 @@ namespace desafio1
                 // }
                 //i += 1;
                 return quociente;
-            }            
+            }
             else
             {
-            while (quociente <= dividendo)
-            {
-                i++;
-                quociente = quociente + divisor;
-            }
-            return quociente;
+                while (quociente <= dividendo)
+                {
+                    i++;
+                    quociente = quociente + divisor;
+                }
+                return quociente;
             }
 
             // Decimal i = 0;
@@ -111,13 +117,13 @@ namespace desafio1
             // return quociente;//Retorna a soma do valor do divisor
         }
 
-        public static Decimal Divide(Decimal dividendo, Decimal divisor)
+        public static Decimal DivideInteiro(Decimal dividendo, Decimal divisor)
         {
             Decimal i = 0;
             Decimal quociente = divisor;
             Decimal aux = dividendo;
 
-            if(dividendo < 0 && divisor < 0)
+            if (dividendo < 0 && divisor < 0)
             {
                 while (quociente >= dividendo)
                 {
@@ -125,10 +131,10 @@ namespace desafio1
                     quociente = quociente + divisor;
                 }
                 return i;
-            } 
+            }
             else if (divisor < 0)
             {
-                while (quociente +1 > -dividendo)
+                while (quociente + 1 > -dividendo)
                 {
                     i += -1;
                     quociente = quociente + divisor;
@@ -136,7 +142,7 @@ namespace desafio1
                 //i += -1;
                 return i;
             }
-            else if(dividendo < 0)              //Esse else if ainda nao esta funcionando, resultado nao esta preciso
+            else if (dividendo < 0)              //Esse else if ainda nao esta funcionando, resultado nao esta preciso
             {
                 // while (quociente > dividendo)
                 // {
@@ -150,7 +156,7 @@ namespace desafio1
                 }
                 return i;
             }
-                       
+
             while (quociente <= dividendo)
             {
                 i++;
@@ -180,17 +186,49 @@ namespace desafio1
             return count;
         }
 
-        public static Decimal Multiplica(Decimal multiplicando, Decimal multiplicador) //Formula que realiza a multiplicação de valores
+        // public static Decimal Multiplica(Decimal multiplicando, Decimal multiplicador) //Formula que realiza a multiplicação de valores
+        // {
+        //     Decimal result = 0; Decimal resultado = 0; //Variaveis que recebe o resultado de um calculo
+        //     // Decimal i = 0; Decimal d = 0; Decimal count = 0; //Variaveis utilizadas como contador
+        //     // if (multiplicando < result || multiplicador < result)
+        //     // {
+        //     //     for (i = 0; i < multiplicando; i++)
+        //     //     {
+        //     //         result = result + multiplicador;
+        //     //     }
+        //     // }
+
+        //     // if (multiplicando < 0 && multiplicador < 0)
+        //     // {
+        //     //     for (i = 0; i > multiplicador; i += -1)
+        //     //     {
+        //     //         resultado = resultado + multiplicando;
+        //     //     }
+        //     //     for (d = 0; d > resultado; d += -1)
+        //     //     {
+        //     //         count++;
+        //     //     }
+        //     //     result = count;
+        //     // }
+
+        //     // for (i = 0; i < multiplicando; i++)
+        //     // {
+        //     //     result = result + multiplicador;
+        //     // }
+        //     return result = multiplicando * multiplicador;
+        // }
+
+        public static Decimal Multiplica(Decimal multiplicando, Decimal multiplicador) //Formula que realiza a multiplicação de dois valores
         {
-            Decimal result = 0; Decimal resultado = 0; //Variaveis que recebe o resultado de um calculo
+            Decimal result = 0; Decimal resultado = 0; //Variaveis que recebe o resulta de um calculo
             Decimal i = 0; Decimal d = 0; Decimal count = 0; //Variaveis utilizadas como contador
-            if (multiplicando < result || multiplicador < result)
-            {
-                for (i = 0; i < multiplicando; i++)
-                {
-                    result = result + multiplicador;
-                }
-            }
+            // if (multiplicando < result || multiplicador < result)
+            // {
+            //     for (i = 0; i < multiplicando; i++)
+            //     {
+            //         result = result + multiplicador;
+            //     }
+            // }
 
             if (multiplicando < 0 && multiplicador < 0)
             {
@@ -204,10 +242,16 @@ namespace desafio1
                 }
                 result = count;
             }
-
-            for (i = 0; i < multiplicando; i++)
+            Decimal interador = multiplicador;
+            Decimal interando = multiplicando;
+            if(multiplicando > multiplicador)
             {
-                result = result + multiplicador;
+                interador = multiplicando;
+                interando = multiplicador;
+            }
+            for (i = 0; i < interador; i++)
+            {
+                result = result + interando;
             }
             return result;
         }
