@@ -6,20 +6,20 @@ namespace desafio7
     {
         static void Main(string[] args)
         {            
-            Array array = new Array();
-            System.Console.WriteLine(array.SomaDoArray());
+            SomarArray somarArray = new SomarArray();
+            int[] array = new int[]{3, 5, 7, 9, 11};            
+            System.Console.WriteLine(somarArray.recebeArray(array, 0));
         }
     }
-    public class Array
+    public class SomarArray
     {
-        public int SomaDoArray()
+        public int recebeArray(int[] array, int i)
         {
-            int totalSoma = 0;
-            int[] arraySoma = new int[]{3, 5, 7, 9, 11};
+            var result = 0;
+            if(i < array.Length)           
+                result = array[i] + recebeArray(array, i + 1);                     
             
-            totalSoma = arraySoma[0] + arraySoma[1] + arraySoma[2] + arraySoma[3] + arraySoma[4];
-
-            return totalSoma;
+            return result;           
         }
     }
 }
