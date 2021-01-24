@@ -5,8 +5,9 @@ namespace desafio8
     class Program
     {
         static void Main(string[] args)
-        {                       
-            System.Console.WriteLine(quadradoMaior(12, 30));
+        {                    
+            int result = quadradoMaior(12, 30);   
+            System.Console.WriteLine("O maior quadrado é {0}x{1}", result, result);
         }
         public static int quadradoMaior(int largura, int comprimento)
         {
