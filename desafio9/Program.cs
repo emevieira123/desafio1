@@ -6,7 +6,7 @@ namespace desafio9
     {
         static void Main(string[] args)
         {
-            int[] arrayOrdenacao = new int[] { 2, 5, 40, 11, 0, 18, 22, 67, 51, 6 };
+            int[] arrayOrdenacao = new int[] { 12, 25, 40, 11, 60, 8, 22, 67, 51, 83 };
 
             Ordenacao(arrayOrdenacao, 0, arrayOrdenacao.Length - 1);
 
